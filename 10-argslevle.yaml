@@ -3,4 +3,4 @@
   tasks:
   - name: args level varibale
     ansible.builtin.debug:
-      msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
+      msg: "hey, i am learning {{COURSE}} trainer is {{TRAINER}}"

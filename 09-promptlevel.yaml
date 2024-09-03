@@ -2,11 +2,11 @@
   hosts: web
   vars_prompt:
   - name: COURSE
-    prompt: "the course name is : "
+    prompt: "the course name is  "
   - name: DURATION
-    prompt: "the duartion is : "
+    prompt: "the duartion is  "
   - name: TRAINER
-    prompt: "the trainer is : "
+    prompt: "the trainer is "
   tasks:
   - name: prompt variables
     ansible.builtin.debug:
