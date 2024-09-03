@@ -1,4 +1,4 @@
--name: print
+- name: print
  hosts: web
  tasks:
  - name: print the message
