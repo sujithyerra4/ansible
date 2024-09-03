@@ -7,9 +7,9 @@
   tasks:
   - name: task level variables
     vars:
-    COURSE: AWS DEVOPS
-    DURATION: 120HRS
-    TRAINER: SUJITH
+      COURSE: AWS DEVOPS
+      DURATION: 120HRS
+      TRAINER: SUJITH
     ansible.builtin.debug:
       msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
     
