@@ -1,0 +1,6 @@
+-name: inventorylevel
+ hosts: web
+ tasks:
+ - name: ineventory level
+   ansible.builtin.debug:
+     msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"

@@ -1,0 +1,8 @@
+-name: filelevel varibales
+ hosts: web
+ vars_files:
+ - var-file.yaml
+ tasks:
+ - name: filelevel
+   ansible.builtin.debug:
+     msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"

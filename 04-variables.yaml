@@ -1,0 +1,10 @@
+-name: variables
+ hosts: web
+ vars:
+   COURSE: Aws
+   DURATION: 120hrs
+   TRAINER: Sujith
+ tasks:
+ - name: variables
+   ansible.builtin.debug:
+     msg: "Hi , i am learning {{COURSE}}, Duration is {{DURATION}},Trainer is {{TRAINER}}"
