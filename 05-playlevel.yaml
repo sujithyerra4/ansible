@@ -1,12 +1,12 @@
--name:  variables
- hosts: web
- vars:
-   COURSE: AWS
-   DURATION: 120HRS
-   TRAINER: SUJITH
- tasks:
- - name: playlevel varibales
-   ansible.builtin.debug:
-     msg: "hey i am learning {{COURSE}} duration is {{DURATION}}, trainer is {{TRAINER}}"
+- name:  variables
+  hosts: web
+  vars:
+    COURSE: AWS
+    DURATION: 120HRS
+    TRAINER: SUJITH
+  tasks:
+  - name: playlevel varibales
+    ansible.builtin.debug:
+      msg: "hey i am learning {{COURSE}} duration is {{DURATION}}, trainer is {{TRAINER}}"
 
 

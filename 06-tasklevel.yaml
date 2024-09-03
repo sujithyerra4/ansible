@@ -1,15 +1,15 @@
--name: variables
- hosts: web
- vars:
-   COURSE: AWS
-   DURATION: 120HRS
-   TRAINER: SUJITH
- tasks:
- - name: task level variables
-   vars:
-   COURSE: AWS DEVOPS
-   DURATION: 120HRS
-   TRAINER: SUJITH
-   ansible.builtin.debug:
-     msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
-  
+- name: variables
+  hosts: web
+  vars:
+    COURSE: AWS
+    DURATION: 120HRS
+    TRAINER: SUJITH
+  tasks:
+  - name: task level variables
+    vars:
+    COURSE: AWS DEVOPS
+    DURATION: 120HRS
+    TRAINER: SUJITH
+    ansible.builtin.debug:
+      msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
+    

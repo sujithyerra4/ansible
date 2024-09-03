@@ -1,6 +1,6 @@
--name: args level
- hosts: web
- tasks:
- - name: args level varibale
-   ansible.builtin.debug:
-     msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
+- name: args level
+  hosts: web
+  tasks:
+  - name: args level varibale
+    ansible.builtin.debug:
+      msg: "hey, i am learning {{COURSE}}, duration is {{DURATION}},trainer is {{TRAINER}}"
