@@ -1,6 +1,6 @@
 - name: number check
   hosts: local
-  connections: local
+  connection: local
   # vars:
   #   my_number
   vars_prompt:
