@@ -1,6 +1,6 @@
 - name: course
   hosts: local
-  connections: local
+  connection: local
   vars:
     COURSE: Devops
     DURATION: 180
