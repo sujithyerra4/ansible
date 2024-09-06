@@ -18,8 +18,8 @@
       vpc_subnet_id: "{{SUB_ID}}"
       security_group: "{{SEC_ID}}"
       image_id: "{{AMI_ID}}"
-      loop: "{{ instances }}"
-      register: ec2_instances
+    loop: "{{ instances }}"
+    register: ec2_instances
 
   - name: print the output
     ansible.builtin.debug:
