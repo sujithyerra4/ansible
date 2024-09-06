@@ -11,15 +11,15 @@
     - frontend
     zone: "sujithyerra.online"
   tasks:
-  - name: create ec2 instance
+  - name: creating server
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "t3.micro"
-      security_group: "{{ sg_id }}"
-      image_id: "{{ ami_id }}"
-    loop: "{{ instances }}"
-    register: ec2_instances
+      instance_type: "t2.micro"
+      vpc_subnet_id: "{{SUB_ID}}"
+      security_group: "{{SEC_ID}}"
+      image_id: "{{AMI_ID}}"
+      loop: "{{ instances }}"
+      register: ec2_instances
 
   - name: print the output
     ansible.builtin.debug:
