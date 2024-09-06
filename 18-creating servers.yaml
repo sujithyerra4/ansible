@@ -11,7 +11,7 @@
     - frontend
     zone: sujithyerra.online
   tasks:
-  - name: creating ec2_instance
+  - name: creating servers
     amazon.aws.ec2_instance:
       name: "{{item}}"
       type: "t2.micro"
