@@ -37,18 +37,18 @@
   - name: convert to dic
     vars:
       tools:
-      - {"key": ci , "value": jenkins}
-      - {"key": cm, "value": ansible}
-      - {"key": cloud, "value": aws}
+      - {key: ci , value: jenkins}
+      - {key: cm, value: ansible}
+      - {key: cloud, value: aws}
 
     ansible.builtin.debug:
       msg: "{{tools|items2dict}}" 
-  - name: convert to dic
+  - name: check ip 
     vars:
       my_ip: 345.3.4.5.5
     ansible.builtin.debug:
       msg: "{{my_ip|ansible.utils.ipv4}}" 
-  - name: convert to dic
+  - name: check ip 
     vars:
       my_ip: web
     ansible.builtin.debug:
