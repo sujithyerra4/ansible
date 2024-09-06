@@ -40,8 +40,8 @@
   - name: creating public route53 recors
     amazon.aws.route53:
       state: present
-      zone: "{{ZONE}}"
-      record: "{{ZONE}}"
+      zone: "{{zone}}"
+      record: "{{zone}}"
       type: A
       value: "{{item.instances[0].public_ip_address}}"
       ttl: 1
