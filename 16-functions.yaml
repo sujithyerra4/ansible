@@ -45,7 +45,7 @@
       msg: "{{tools|items2dict}}" 
   - name: check ip 
     vars:
-      my_ip: 345.3.4.5.5
+      my_ip: 34.229.13.6
     ansible.builtin.debug:
       msg: "{{my_ip|ansible.utils.ipv4}}" 
   - name: check ip 
