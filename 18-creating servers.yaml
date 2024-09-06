@@ -21,6 +21,10 @@
       loop: "{{instances}}"
       register: ec2_instances
 
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "print the {{ec2_instances}}"
+
   - name: creating private route53 records
     amazon.aws.route53:
       state: present
