@@ -1,0 +1,48 @@
+- name: create ec2 instance
+  hosts: local
+  connection: local
+  vars:
+    SUB_ID:
+    SEC_ID:
+    AMI_ID:
+    instances:
+    - mysql
+    - backend
+    - frontend
+    zone: sujithyerra.online
+  tasks:
+  - name: creating instances
+    amazon.aws.ec2_instance:
+      name: "{{item}}"
+      type: t2.micro
+      subnet: "{{SUB_ID}}"
+      security: "{{SEC_ID}}"
+      image: "{{AMI_ID}}"
+      loop: "{{instances}}"
+      register: ec2_instances
+
+  - name: creating private route53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ZONE}}"
+      record: "{{item.item}}.{{zone}}"
+      type: A
+      ttl: 1
+      value: "{{item.instances[0].private_ip_address}}"
+      wait: true
+      overwrite: true
+      loop: "{{ec2_instances.results}}"
+
+  - name: creating public route53 recors
+    amazon.aws.route53:
+      state: present
+      zone: "{{ZONE}}"
+      record: "{{zone}}"
+      type: A
+      value: "{{item.instances[0].public_ip_address}}"
+      ttl: 1
+      wait: true
+      overwrite: true
+      loop: "{{ec2_instances.results}}"
+      when: "{{item.item}}" == frontend
+      

@@ -1,0 +1,14 @@
+- name: command vs shell
+  hosts: local
+  connection: local
+  tasks:
+  - name: command
+    ansible.builtin.command: ls -ltr > /tmp/output.txt
+  - name: shell
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt
+  - name: command
+    ansible.builtin.command: ps -ef|grep ssh
+    register: output
+  - name: shell
+    ansible.builtin.shell: ps -ef|grep ssh
+    register: output

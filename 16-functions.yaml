@@ -1,0 +1,56 @@
+- name: functions
+  hosts: local
+  connection: local
+  tasks:
+  - name: default string
+    ansible.builtin.debug:
+      msg: "the course is {{COURSE|default 'ansible'}}"
+  - name: convert to upper
+    vars:
+      greeting: "hello suji"
+    ansible.builtin.debug:
+      msg: "{{greeting|upper}}"
+  - name: convert to upper
+    vars:
+      greeting: "HELLO suji"
+    ansible.builtin.debug:
+      msg: "{{greeting|lower}}"  
+  - name: convert to upper
+    vars:
+      number: [1,2,3,67,98]
+    ansible.builtin.debug:
+      msg: "the min no. is {{number|min}}"  
+  - name: convert to upper
+    vars:
+      number: [1,2,3,67,98]
+    ansible.builtin.debug:
+      msg: "the max no. is {{number|max}}" 
+
+  - name: convert to items
+    vars:
+      tools:
+        ci: jenkins
+        cm: ansible
+        cloud: aws
+    ansible.builtin.debug:
+      msg: "{{tools|dic2items}}"   
+  - name: convert to dic
+    vars:
+      tools:
+      - {key: ci , value: jenkins}
+      - {key: cm, value: ansible}
+      - {key: cloud, value: aws}
+
+    ansible.builtin.debug:
+      msg: "{{tools|items2dic}}" 
+  - name: convert to dic
+    vars:
+      my_ip: 345.3.4.5.5
+    ansible.builtin.debug:
+      msg: "{{my_ip|ansible.utils.ipv4}}" 
+  - name: convert to dic
+    vars:
+      my_ip: web
+    ansible.builtin.debug:
+      msg: "{{my_ip|ansible.utils.ipv4}}"
+    
