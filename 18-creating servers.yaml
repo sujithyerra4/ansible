@@ -28,7 +28,7 @@
   - name: creating private route53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ZONE}}"
+      zone: "{{zone}}"
       record: "{{item.item}}.{{zone}}"
       type: A
       ttl: 1
