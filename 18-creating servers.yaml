@@ -35,7 +35,7 @@
       value: "{{item.instances[0].private_ip_address}}"
       wait: true
       overwrite: true
-      loop: "{{ec2_instances.results}}"
+    loop: "{{ec2_instances.results}}"
 
   - name: creating public route53 recors
     amazon.aws.route53:
@@ -47,6 +47,6 @@
       ttl: 1
       wait: true
       overwrite: true
-      loop: "{{ec2_instances.results}}"
-      when: item.item == "frontend"
+    loop: "{{ec2_instances.results}}"
+    when: item.item == "frontend"
       
