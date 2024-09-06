@@ -33,16 +33,16 @@
         cm: ansible
         cloud: aws
     ansible.builtin.debug:
-      msg: "{{tools|dic2items}}"   
+      msg: "{{tools|dict2items}}"   
   - name: convert to dic
     vars:
       tools:
-      - {key: ci , value: jenkins}
-      - {key: cm, value: ansible}
-      - {key: cloud, value: aws}
+      - {"key": ci , "value": jenkins}
+      - {"key": cm, "value": ansible}
+      - {"key": cloud, "value": aws}
 
     ansible.builtin.debug:
-      msg: "{{tools|items2dic}}" 
+      msg: "{{tools|items2dict}}" 
   - name: convert to dic
     vars:
       my_ip: 345.3.4.5.5
