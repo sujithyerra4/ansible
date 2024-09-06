@@ -4,7 +4,7 @@
   tasks:
   - name: default string
     ansible.builtin.debug:
-      msg: "the course is {{COURSE|default 'ansible'}}"
+      msg: the course is "{{ COURSE|default 'ansible'}}"
   - name: convert to upper
     vars:
       greeting: "hello suji"

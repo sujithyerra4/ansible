@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-    SUB_ID:
-    SEC_ID:
-    AMI_ID:
+    SUB_ID: subnet-05638ab9ab29014df
+    SEC_ID: "sg-0a8859b9d9e25585f"
+    AMI_ID: "ami-09c813fb71547fc4f"
     instances:
     - mysql
     - backend
@@ -14,7 +14,7 @@
   - name: creating instances
     amazon.aws.ec2_instance:
       name: "{{item}}"
-      type: t2.micro
+      type: "t2.micro"
       subnet: "{{SUB_ID}}"
       security: "{{SEC_ID}}"
       image: "{{AMI_ID}}"
