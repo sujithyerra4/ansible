@@ -1,8 +1,8 @@
 - name: create ec2 instance
   hosts: local
   connection: local
-  vars:
-    var-file.yaml
+  vars_files:
+  - var-file.yaml
   tasks:
   - name: ansible to install boto3 and botocore
     ansible.builtin.pip:
