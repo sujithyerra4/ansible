@@ -2,15 +2,14 @@
   hosts: local
   connection: local
   vars:
-    SUB_ID: "subnet-05638ab9ab29014df"
-    SEC_ID: "sg-0a8859b9d9e25585f"
-    AMI_ID: "ami-09c813fb71547fc4f"
-    instances:
-    - mysql
-    - backend
-    - frontend
-    zone: "sujithyerra.online"
+    var-file.yaml
   tasks:
+  - name: ansible to install boto3 and botocore
+    ansible.builtin.pip:
+      name:
+      - boto3
+      - botocore
+      executable: pip3.9  
   - name: creating server
     amazon.aws.ec2_instance:
       name: "{{ item }}"
