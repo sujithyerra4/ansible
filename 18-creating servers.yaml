@@ -13,10 +13,10 @@
   - name: creating server
     amazon.aws.ec2_instance:
       name: "{{ item }}"
-      instance_type: "t2.micro"
-      vpc_subnet_id: "{{SUB_ID}}"
-      security_group: "{{SEC_ID}}"
-      image_id: "{{AMI_ID}}"
+      type: "t2.micro"
+      subnet_id: "{{SUB_ID}}"
+      group: "{{SEC_ID}}"
+      image: "{{AMI_ID}}"
     loop: "{{ instances }}"
     register: ec2_instances
 
